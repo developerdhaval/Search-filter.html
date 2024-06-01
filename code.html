@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<!--[Theme - Cupcake]-->
+<html data-theme="cupcake" lang="en">
+
+<head>
+    <!--[Code Name: Search Filter
+        Creator: Code Design
+        Update: MAC_UI_3.0 beta
+        Code creator: Developer Dhaval]-->
+
+    <!--[Dasiy Ui@4.11.1 Support style]-->
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.11.1/dist/full.min.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Code</title>
+
+    <style>
+        /* Style tag start */
+
+        .card {
+            background-color: rgb(204, 185, 227);
+            padding: 10px;
+            align-items: center;
+            width: 200px;
+            height: 140px;
+            padding-top: 20px;
+            padding-bottom: 20px;
+            box-shadow: 4px 4px rgb(159, 131, 202);
+
+        }
+
+        .dropbtn {
+            background-color: #04AA6D;
+            color: white;
+            padding: 16px;
+            font-size: 16px;
+            border: none;
+            cursor: pointer;
+            border-radius: 15px;
+        }
+
+        .dropbtn:hover,
+        .dropbtn:focus {
+            background-color: #3e8e41;
+            border-radius: 15px;
+        }
+
+        #myInput {
+            box-sizing: border-box;
+            background-image: url('searchicon.png');
+            background-position: 14px 12px;
+            background-repeat: no-repeat;
+            font-size: 16px;
+            padding: 14px 20px 12px 45px;
+            border: none;
+            border-bottom: 1px solid #ddd;
+            border-radius: 15px;
+        }
+
+
+
+        .dropdown {
+            position: relative;
+            display: inline-block;
+            border-radius: 15px;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #f6f6f6;
+            min-width: 230px;
+            overflow: auto;
+            border: 1px solid #ddd;
+            z-index: 1;
+            border-radius: 25px;
+
+        }
+
+        .dropdown-content a {
+            color: rgb(0, 0, 0);
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+
+        .dropdown a:hover {
+            background-color: #ddd;
+        }
+
+        .show {
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+    <!--[Body tag start]-->
+    <center>
+        <div class="card">
+            <h2>Search/Filter Dropdown</h2><br>
+
+            <div class="dropdown">
+                <button onclick="func()" class="btn btn-outline">Dropdown</button>
+                <div id="myDropdown" class="dropdown-content"><br>
+                    <label class="input input-bordered flex items-center gap-2">
+                        <input id="myInput" onkeyup="filterFunction()" type="text" class="grow" placeholder="Search" />
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor"
+                            class="w-4 h-4 opacity-70">
+                            <path fill-rule="evenodd"
+                                d="M9.965 11.026a5 5 0 1 1 1.06-1.06l2.755 2.754a.75.75 0 1 1-1.06 1.06l-2.755-2.754ZM10.5 7a3.5 3.5 0 1 1-7 0 3.5 3.5 0 0 1 7 0Z"
+                                clip-rule="evenodd" />
+                        </svg>
+                    </label><br>
+                    <p style="border-top: 1px solid rgb(140, 139, 139);"></p>
+
+                    <a href="#">About</a>
+                    <a href="#">Brown</a>
+                    <a href="#">Base</a>
+                    <a href="#">Car</a>
+                    <a href="#">Content</a>
+                    <a href="#">Simple</a>
+                    <a href="#">Tools</a>
+                </div>
+            </div>
+        </div>
+    </center>
+
+    <script>
+        /* JavaScript */
+        function func() {
+            document.getElementById("myDropdown").classList.toggle("show");
+        }
+
+        function filterFunction() {
+            const input = document.getElementById("myInput");
+            const filter = input.value.toUpperCase();
+            const div = document.getElementById("myDropdown");
+            const a = div.getElementsByTagName("a");
+            for (let i = 0; i < a.length; i++) {
+                txtValue = a[i].textContent || a[i].innerText;
+                if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                    a[i].style.display = "";
+                } else {
+                    a[i].style.display = "none";
+
+                }
+            }
+        }
+    </script>
+</body>
+
+
+</html>
