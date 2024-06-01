@@ -8,8 +8,8 @@ Drop-down Search Filter for your website with awesome design.
 
 You can Add your item name with use **<a>** tag.
 For Example: 
-- <a href="#">About</a>
-- <a href="#">Apple</a>
+- ```<a href="#">About</a>```
+- ```<a href="#">Apple</a>```
 ## Features
 
 - MAC_UI_3.0 Beta
@@ -25,7 +25,8 @@ For Example:
 
 ## Update version 
 
-- macui_3.0 - applied 
+- macui_3.0 beta - applied
+- macui_3.0 Stable - upcoming 
 - MAC_Ui_4.0 support - upcoming 
 
 ## Demo
@@ -37,4 +38,4 @@ Insert gif or link to demo
 
 - Designer: Developer Dhaval
 - Creator: UIOS - Design Code
-- 
+
